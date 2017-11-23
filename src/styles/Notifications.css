@@ -1,0 +1,22 @@
+.notifications__wrapper {
+    width: 50%;
+    min-width: 350px;
+    margin: 12px auto;
+}
+
+.notifications__actions {
+    text-align: right;
+    margin-bottom: 12px;
+}
+
+.notifications__table {
+    width: 100%;
+}
+
+.notifications__table th {
+    text-align: left;
+}
+
+/**
+ * Place your CSS below
+ */
