@@ -8,8 +8,8 @@ Please take a look at the below tasks:
 - [x] Add functionality to "Toggle show unacknowledged"
 - [x] Add functionality to "Acknowledge all"
 - [x] Add functionality to "Delete acknowledged"
-- [ ] Colour the notifications date to #999
-- [ ] Colour a notification's title red if it is older than 10 days, and still unacknowledged
+- [x] Colour the notifications date to #999
+- [x] Colour a notification's title red if it is older than 10 days, and still unacknowledged
 - [ ] Set opacity for any acknowledged notifications
 
 Once complete, we would prefer it to be uploaded to Github, etc and email us a link to the repo.

@@ -40,6 +40,8 @@ class Notifications extends Component {
 
         const items = notificationItems.filter(notification => showUnacknowledged || notification.acknowledged);
 
+        const tenDaysAgo = moment().subtract(10, 'days');
+
         return (
             <div className="notifications__wrapper">
                 <div className="notifications__actions">
@@ -56,15 +58,19 @@ class Notifications extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {items.map((item, index) => (
-                        <tr key={index}>
-                            <td>{item.title}</td>
-                            <td className="notifications__date">{moment(new Date(item.date)).format('DD/MM/YYYY HH:MM')}</td>
-                            <td>
-                                <input type="checkbox" value={item.id} checked={item.acknowledged} onChange={this.onAcknowledge} />
-                            </td>
-                        </tr>
-                        ))}
+                        {items.map((item, index) => {
+                            const date = moment(new Date(item.date));
+                            const outdated = !item.acknowledged && date.isBefore(tenDaysAgo);
+                            return (
+                                <tr key={index}>
+                                    <td style={{color: (outdated ? 'red': null)}}>{item.title}</td>
+                                    <td className="notifications__date">{date.format('DD/MM/YYYY HH:MM')}</td>
+                                    <td>
+                                        <input type="checkbox" value={item.id} checked={item.acknowledged} onChange={this.onAcknowledge} />
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>
