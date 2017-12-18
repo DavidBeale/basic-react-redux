@@ -1,7 +1,9 @@
-import { LOAD_NOTIFICATIONS, TOGGLE_STATUS } from '../actions/notifications';
+import { combineReducers } from 'redux'
+
+import { LOAD_NOTIFICATIONS, TOGGLE_STATUS, TOGGLE_SHOW_UNACKNOWLEDGED } from '../actions/notifications';
 
 
-const notifications = (state = [], action) => {
+const notificationItems = (state = [], action) => {
   switch (action.type) {
     case LOAD_NOTIFICATIONS:
         return action.payload;
@@ -23,4 +25,19 @@ const notifications = (state = [], action) => {
   }
 }
 
-export default notifications
+
+const showUnacknowledged = (state = true, action) => {
+    switch (action.type) {
+      case TOGGLE_SHOW_UNACKNOWLEDGED:
+          return state = !state;
+
+      default:
+        return state
+    }
+}
+
+
+export default combineReducers({
+  notificationItems,
+  showUnacknowledged
+})

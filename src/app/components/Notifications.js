@@ -9,9 +9,10 @@ class Notifications extends Component {
         super();
 
         this.onAcknowledge = this.onAcknowledge.bind(this);
+        this.onToggleAcknowledged = this.onToggleAcknowledged.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.loadNotifications();
     }
 
@@ -19,8 +20,14 @@ class Notifications extends Component {
         this.props.toggleStatus(Number(event.target.value))
     }
 
+    onToggleAcknowledged() {
+        this.props.toggleShowUnacknowledged();
+    }
+
     render() {
-        const { notifications } = this.props;
+        const { notificationItems, showUnacknowledged } = this.props.notifications;
+
+        const items = notificationItems.filter(notification => showUnacknowledged || notification.acknowledged);
 
         return (
             <div className="notifications__wrapper">
@@ -38,7 +45,7 @@ class Notifications extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {notifications.map((item, index) => (
+                        {items.map((item, index) => (
                         <tr key={index}>
                             <td>{item.title}</td>
                             <td>{moment(new Date(item.date)).format('DD/MM/YYYY HH:MM')}</td>

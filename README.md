@@ -4,8 +4,8 @@
 Please take a look at the below tasks:
 
 - [x] Load the notifications into the component
-- [ ] Complete toggle notifications logic
-- [ ] Add functionality to "Toggle show unacknowledged"
+- [x] Complete toggle notifications logic
+- [x] Add functionality to "Toggle show unacknowledged"
 - [ ] Add functionality to "Acknowledge all"
 - [ ] Add functionality to "Delete acknowledged"
 - [ ] Colour the notifications date to #999
