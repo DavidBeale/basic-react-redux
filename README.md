@@ -6,7 +6,7 @@ Please take a look at the below tasks:
 - [x] Load the notifications into the component
 - [x] Complete toggle notifications logic
 - [x] Add functionality to "Toggle show unacknowledged"
-- [ ] Add functionality to "Acknowledge all"
+- [x] Add functionality to "Acknowledge all"
 - [ ] Add functionality to "Delete acknowledged"
 - [ ] Colour the notifications date to #999
 - [ ] Colour a notification's title red if it is older than 10 days, and still unacknowledged

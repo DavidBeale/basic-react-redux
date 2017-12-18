@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 
-import { LOAD_NOTIFICATIONS, TOGGLE_STATUS, TOGGLE_SHOW_UNACKNOWLEDGED } from '../actions/notifications';
+import { LOAD_NOTIFICATIONS, TOGGLE_STATUS, TOGGLE_SHOW_UNACKNOWLEDGED,
+    ACKNOWLEDGE_ALL } from '../actions/notifications';
 
 
 const notificationItems = (state = [], action) => {
@@ -19,6 +20,12 @@ const notificationItems = (state = [], action) => {
 
             return notification;
         });
+
+    case ACKNOWLEDGE_ALL:
+        return state.map(notification => ({
+            ...notification,
+            acknowledged: true
+        }))
 
     default:
       return state

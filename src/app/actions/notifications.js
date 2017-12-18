@@ -3,6 +3,7 @@ import moment from 'moment';
 export const LOAD_NOTIFICATIONS = 'LOAD_NOTIFICATIONS';
 export const TOGGLE_STATUS = 'TOGGLE_STATUS';
 export const TOGGLE_SHOW_UNACKNOWLEDGED = 'TOGGLE_SHOW_UNACKNOWLEDGED';
+export const ACKNOWLEDGE_ALL = 'ACKNOWLEDGE_ALL';
 
 /**
  * Mock getting data from an api.
@@ -47,5 +48,12 @@ export const toggleStatus = (id) => {
 export const toggleShowUnacknowledged = () => {
     return {
         type: TOGGLE_SHOW_UNACKNOWLEDGED
+    };
+}
+
+
+export const acknowledgeAll = () => {
+    return {
+        type: ACKNOWLEDGE_ALL
     };
 }

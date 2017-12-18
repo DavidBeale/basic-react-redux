@@ -10,6 +10,7 @@ class Notifications extends Component {
 
         this.onAcknowledge = this.onAcknowledge.bind(this);
         this.onToggleAcknowledged = this.onToggleAcknowledged.bind(this);
+        this.onAcknowledgeAll = this.onAcknowledgeAll.bind(this);
     }
 
     componentDidMount() {
@@ -22,6 +23,10 @@ class Notifications extends Component {
 
     onToggleAcknowledged() {
         this.props.toggleShowUnacknowledged();
+    }
+
+    onAcknowledgeAll() {
+        this.props.acknowledgeAll();
     }
 
     render() {
