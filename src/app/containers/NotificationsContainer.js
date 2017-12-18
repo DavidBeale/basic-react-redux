@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { loadNotifications, toggleStatus, toggleShowUnacknowledged, acknowledgeAll } from '../actions/notifications';
+import { loadNotifications, toggleStatus, toggleShowUnacknowledged,
+    acknowledgeAll, deleteAcknowledged } from '../actions/notifications';
 import Notifications from '../components/Notifications';
 
 const mapStateToProps = state => {
@@ -15,7 +16,8 @@ const mapDispatchToProps = (dispatch) => {
         loadNotifications,
         toggleStatus,
         toggleShowUnacknowledged,
-        acknowledgeAll
+        acknowledgeAll,
+        deleteAcknowledged
     }, dispatch);
 }
 

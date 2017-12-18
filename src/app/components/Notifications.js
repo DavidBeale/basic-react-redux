@@ -11,6 +11,7 @@ class Notifications extends Component {
         this.onAcknowledge = this.onAcknowledge.bind(this);
         this.onToggleAcknowledged = this.onToggleAcknowledged.bind(this);
         this.onAcknowledgeAll = this.onAcknowledgeAll.bind(this);
+        this.onDeleteAcknowledged = this.onDeleteAcknowledged.bind(this);
     }
 
     componentDidMount() {
@@ -28,6 +29,11 @@ class Notifications extends Component {
     onAcknowledgeAll() {
         this.props.acknowledgeAll();
     }
+
+    onDeleteAcknowledged() {
+        this.props.deleteAcknowledged();
+    }
+
 
     render() {
         const { notificationItems, showUnacknowledged } = this.props.notifications;

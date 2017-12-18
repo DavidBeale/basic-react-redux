@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 import { LOAD_NOTIFICATIONS, TOGGLE_STATUS, TOGGLE_SHOW_UNACKNOWLEDGED,
-    ACKNOWLEDGE_ALL } from '../actions/notifications';
+    ACKNOWLEDGE_ALL, DELETE_ACKNOWLEDGED } from '../actions/notifications';
 
 
 const notificationItems = (state = [], action) => {
@@ -26,6 +26,9 @@ const notificationItems = (state = [], action) => {
             ...notification,
             acknowledged: true
         }))
+
+    case DELETE_ACKNOWLEDGED:
+        return state.filter(notification => notification.acknowledged === false);
 
     default:
       return state
