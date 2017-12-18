@@ -5,8 +5,18 @@ import '../../styles/Notifications.css';
 
 class Notifications extends Component {
 
+    constructor() {
+        super();
+
+        this.onAcknowledge = this.onAcknowledge.bind(this);
+    }
+
     componentWillMount() {
         this.props.loadNotifications();
+    }
+
+    onAcknowledge(event) {
+        this.props.toggleStatus(Number(event.target.value))
     }
 
     render() {

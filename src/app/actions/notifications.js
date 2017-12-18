@@ -1,5 +1,8 @@
 import moment from 'moment';
 
+export const LOAD_NOTIFICATIONS = 'LOAD_NOTIFICATIONS';
+export const TOGGLE_STATUS = 'TOGGLE_STATUS';
+
 /**
  * Mock getting data from an api.
  */
@@ -26,7 +29,7 @@ export const loadNotifications = () => {
     ];
 
     return {
-        type: 'LOAD_NOTIFICATIONS',
+        type: LOAD_NOTIFICATIONS,
         payload: payload.map((item, index) => ({ ...item, date: moment().subtract(index, 'days') }))
     };
 }
@@ -34,7 +37,7 @@ export const loadNotifications = () => {
 
 export const toggleStatus = (id) => {
     return {
-        type: 'TOGGLE_STATUS',
+        type: TOGGLE_STATUS,
         payload: id,
     };
 }

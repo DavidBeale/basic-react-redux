@@ -9,8 +9,8 @@ Please take a look at the below tasks:
 - [ ] Add functionality to "Acknowledge all"
 - [ ] Add functionality to "Delete acknowledged"
 - [ ] Colour the notifications date to #999
-- [ ] Colour a notificaitons title red if it is older than 10 days, and still unacknowledged
+- [ ] Colour a notification's title red if it is older than 10 days, and still unacknowledged
 - [ ] Set opacity for any acknowledged notifications
 
-Once complete, we would prefer it to be uploaded to github, etc and email us a link to the repo.
+Once complete, we would prefer it to be uploaded to Github, etc and email us a link to the repo.
 If this is not possible, please ZIP the src and email it back to us.

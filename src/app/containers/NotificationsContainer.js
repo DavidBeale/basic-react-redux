@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { loadNotifications } from '../actions/notifications';
+import { loadNotifications, toggleStatus } from '../actions/notifications';
 import Notifications from '../components/Notifications';
 
 const mapStateToProps = state => {
@@ -12,7 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        loadNotifications
+        loadNotifications,
+        toggleStatus
     }, dispatch);
 }
 
