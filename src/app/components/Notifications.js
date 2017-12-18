@@ -5,7 +5,13 @@ import '../../styles/Notifications.css';
 
 class Notifications extends Component {
 
+    componentWillMount() {
+        this.props.loadNotifications();
+    }
+
     render() {
+        const { notifications } = this.props;
+
         return (
             <div className="notifications__wrapper">
                 <div className="notifications__actions">
@@ -22,7 +28,7 @@ class Notifications extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.notifications.map((item, index) => (
+                        {notifications.map((item, index) => (
                         <tr key={index}>
                             <td>{item.title}</td>
                             <td>{moment(new Date(item.date)).format('DD/MM/YYYY HH:MM')}</td>

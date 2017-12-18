@@ -3,7 +3,7 @@
 
 Please take a look at the below tasks:
 
-- [ ] Load the notifications into the component
+- [x] Load the notifications into the component
 - [ ] Complete toggle notifications logic
 - [ ] Add functionality to "Toggle show unacknowledged"
 - [ ] Add functionality to "Acknowledge all"
@@ -14,4 +14,3 @@ Please take a look at the below tasks:
 
 Once complete, we would prefer it to be uploaded to github, etc and email us a link to the repo.
 If this is not possible, please ZIP the src and email it back to us.
-
