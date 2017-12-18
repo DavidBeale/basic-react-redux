@@ -59,7 +59,7 @@ class Notifications extends Component {
                         {items.map((item, index) => (
                         <tr key={index}>
                             <td>{item.title}</td>
-                            <td>{moment(new Date(item.date)).format('DD/MM/YYYY HH:MM')}</td>
+                            <td className="notifications__date">{moment(new Date(item.date)).format('DD/MM/YYYY HH:MM')}</td>
                             <td>
                                 <input type="checkbox" value={item.id} checked={item.acknowledged} onChange={this.onAcknowledge} />
                             </td>
