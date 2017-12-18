@@ -62,7 +62,7 @@ class Notifications extends Component {
                             const date = moment(new Date(item.date));
                             const outdated = !item.acknowledged && date.isBefore(tenDaysAgo);
                             return (
-                                <tr key={index}>
+                                <tr key={index} style={{opacity: (item.acknowledged ? '0.4': null)}}>
                                     <td style={{color: (outdated ? 'red': null)}}>{item.title}</td>
                                     <td className="notifications__date">{date.format('DD/MM/YYYY HH:MM')}</td>
                                     <td>
